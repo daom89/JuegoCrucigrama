@@ -7,7 +7,7 @@ public class Tablero {
     private ArrayList<Palabra> palabrasJuego;
     private ArrayList<Palabra> palabrasEncontradas;
     private int dimension = 6;
-    private char[][] espacio;
+    private char[][] espacio; //Matiz de la cuadricula
 
     public Tablero() {
     }
@@ -75,7 +75,6 @@ public class Tablero {
     }
 
     public void cargarPalabras() {
-
         for (Palabra palabra: this.palabrasJuego) {
             int count = 0;
             int x = palabra.getX();
@@ -109,7 +108,7 @@ public class Tablero {
     public void rellenar(){
         for (int filas = 0; filas < this.dimension; filas++) {
             for (int columnas = 0; columnas < this.dimension; columnas++) {
-                if(this.espacio [filas][columnas] == '\u0000'){
+                if(this.espacio [filas][columnas] == '\u0000'){ //NULL
                     this.espacio [filas][columnas] = (char) (int) (Math.random() * (90 - 65) + 65);
                 }
             }

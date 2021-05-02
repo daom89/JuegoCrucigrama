@@ -49,7 +49,7 @@ public class JuegoCrucigrama {
         Scanner sc = new Scanner(System.in);
         do {
             System.out.println("");
-            Juego.getTableroPartida().imprimir();
+            Juego.getTableroPartida().imprimir(); //Relaciones
             System.out.println("");
 
             System.out.println("1) Ingresar Palabra Encontrada");
@@ -60,16 +60,16 @@ public class JuegoCrucigrama {
             try{
                 String Value = sc.next();
                 opcion = Integer.parseInt(Value);
-            }catch (Exception $ime){
-                System.out.println("Opcion No Valida");
-                opcion = 0;
+            }catch (Exception ime){
+               System.out.println("Opcion No Valida.."+ime.getMessage());
+               opcion = 0;
             }
 
             switch (opcion){
                 case 1:
                     System.out.println("Ingrese palabra encontrada:");
                     String palabra = sc.next();
-                    Juego.getTableroPartida().verificarPalabra(palabra);
+                    Juego.getTableroPartida().verificarPalabra(palabra); //Relaciones
                     opcion = juegoTerminado ();
                     break;
                 case 2:
@@ -94,7 +94,7 @@ public class JuegoCrucigrama {
             if(sc.nextInt() == 1){
                 nuevoJuego();
                 System.err.println("Tu puntaje fue de: "+Juego.getPlayer().getPuntaje());
-                System.exit(0);
+                System.exit(0); //Finalizar el programa
             }else{
                 System.err.println("Tu puntaje fue de: "+Juego.getPlayer().getPuntaje());
                 System.out.println("Juego Terminado");

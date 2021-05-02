@@ -63,8 +63,6 @@ public class Partida {
                 return new ArrayList<Palabra>(this.bancoPalabras.subList(0, 2));
             case NORMAL:
                 return new ArrayList<Palabra>(this.bancoPalabras.subList(0, 4));
-            case DIFICIL:
-                return this.bancoPalabras;
             default:
                 return this.bancoPalabras;
         }
